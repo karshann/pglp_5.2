@@ -25,6 +25,8 @@ public enum Applicationmain {
             stmt.executeUpdate(sql);
             sql = "CREATE TABLE TELEPHONE(Nom VARCHAR(255),Telephone int)";
             stmt.executeUpdate(sql);
+            sql ="CREATE TABLE COMPOSITEPERSONNEL(Nom VARCHAR(255), Nomobj VARCHAR(255), type int )";
+            stmt.executeUpdate(sql);
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
             System.out.println("Chargement de la base de données");

@@ -18,14 +18,14 @@ public class PersonnelDAO extends Dao<Personnel>{
                              "INSERT INTO Personnel(Nom, Prenom, Fonction, Naissance) values(?, ?, ?, ?)");
              PreparedStatement telInsert =
                      this.connect.prepareStatement("INSERT INTO Telephone(Nom, Telephone) VALUES(?, ?)"); ) {
-            personnelInsert.setString(1, obj.getNom());
+            personnelInsert.setString(1, obj.return_name());
             personnelInsert.setString(2, obj.getPrenom());
             personnelInsert.setString(3, obj.getFonction());
             personnelInsert.setDate(4, java.sql.Date.valueOf(obj.getNaissance()));
             personnelInsert.executeUpdate();
             for (String e : obj.getTelephone()) {
 
-                telInsert.setString(1, obj.getNom());
+                telInsert.setString(1, obj.return_name());
                 telInsert.setInt(2, Integer.parseInt(e));
                 telInsert.executeUpdate();
             }

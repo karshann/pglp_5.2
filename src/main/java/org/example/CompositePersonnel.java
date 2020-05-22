@@ -5,14 +5,30 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CompositePersonnel implements Composite, Serializable {
+    String nom;
     /**
      *
      */
+
     protected List<Composite> enfantComposite = new ArrayList<Composite>();
 
     /**
      *
+     * @param nom
      */
+    CompositePersonnel(String nom){
+        this.nom=nom;
+    }
+
+    @Override
+    public String return_name() {
+        return nom;
+    }
+
+    /**
+     *
+     */
+
     @Override
     public void print() {
         for (Composite composite : enfantComposite) {

@@ -47,7 +47,8 @@ public final class Personnel implements Composite , Serializable {
         return fonction;
     }
 
-    public String getNom() {
+    @Override
+    public String return_name() {
         return nom;
     }
 
